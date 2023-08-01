@@ -1,5 +1,5 @@
 import {Routes,Route} from "react-router-dom";
-import React,{useState} from 'react'
+import React, {useState} from 'react'
 
 
 import Heading from "./Component/Heading";

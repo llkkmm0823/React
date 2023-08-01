@@ -3,12 +3,12 @@ import React,{useState} from 'react'
 function Upload(props) {
 
   const [content,setContent] = useState("");
-  const [contentList,setContentList] = useState([]);
+ // const [contentList,setContentList] = useState([]); // App.js와 공유하고있음
 
   const onsubmit = ()=>{
-    let arr = [...contentList];
+    let arr = [...props.ContentList];
     arr.push(content);
-    setContentList([...arr]);
+    props.setContentList([...arr]);
     setContent("");
   }
 
@@ -19,7 +19,7 @@ function Upload(props) {
       flexDirection:"column",
       alignItems:"center"
     }}><br/>
-      <input type="test" onChange={
+      <input type="test" value={content}onChange={
         (e)=>{
           setContent(e.currentTarget.value);
 
