@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Heading() {
   return (
-    <div>
+    <div className='App-header'>
         <h1>Hello React!!!!!!!!!!!!!!!!!</h1>
       <div
       style={{

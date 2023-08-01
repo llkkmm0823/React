@@ -1,9 +1,35 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-function Upload() {
+function Upload(props) {
+
+  const [content,setContent] = useState("");
+  const [contentList,setContentList] = useState([]);
+
+  const onsubmit = ()=>{
+    let arr = [...contentList];
+    arr.push(content);
+    setContentList([...arr]);
+    setContent("");
+  }
+
   return (
-    <div>
-      <h1>Upload 컴포넌트 입니다</h1>
+     <div 
+     style={{
+      display:"flex",
+      flexDirection:"column",
+      alignItems:"center"
+    }}><br/>
+      <input type="test" onChange={
+        (e)=>{
+          setContent(e.currentTarget.value);
+
+        }
+      }/>
+      <button onClick={
+        ()=>{
+          onsubmit();
+        }
+      } >제출</button>
     </div>
   )
 }
