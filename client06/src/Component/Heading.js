@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function Heading() {
   return (
@@ -10,9 +11,9 @@ function Heading() {
         flexDirection:"column",
         alignItems:"center"
       }}>
-        <link to ="/">home</link>
-        <link to ="/Upload">Upload</link>
-        <link to ="/List">List</link>
+        <Link to ="/">home</Link>
+        <Link to ="/Upload">Upload</Link>
+        <Link to ="/List">List</Link>
 
       </div>
     </div>
