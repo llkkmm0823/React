@@ -15,9 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded( {extended:true} ) );
 app.use(express.static( path.join( __dirname , "../client08/build")))
 
-app.get("/", (req, res)=>{
+/*app.get("/", (req, res)=>{
     res.send("<h1>Hello World</h1>");
-});
+});*/
 app.get("/main", (req, res)=>{
     res.sendFile( path.join( __dirname , "../client08/build/index.html") );
 });
