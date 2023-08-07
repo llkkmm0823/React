@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import {  Routes, Route } from "react-router-dom";
+import Heading from './Component/Heading';
+import Main from './Component/Main';
+import Join from './Component/Join';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            {/* 여기에 layout.html 의 내용이 표시될 예정 */}
+            <Heading />
+            <Routes>
+                {/* block content 에 해당한 페이지들이 표시될 예정 */}
+                {/* <Route path="/" element={} /> */}
+                <Route path="/" element={<Main />} />
+                <Route path="/join" element={<Join />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;
