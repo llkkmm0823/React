@@ -9,6 +9,7 @@ app.set('port', process.env.PORT || 5000); // 서버 포트에 사용할 값을 
 dotenv.config();
 
 app.use('/', express.static(path.join(__dirname, 'public'))); // 일반 static 폴더 설정
+app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -30,14 +31,15 @@ app.use(passport.session());
 
 //------------------------------------------------------------
 //const indexRouter = require('./routers');
-//const postRouter = require('./routers/post');
 //const authRouter = require('./routers/auth');
 const memberRouter = require('./routers/Member');
+const feedRouter = require('./routers/Feed');
 //app.use('/api/', indexRouter);
-//app.use('/api/post', postRouter);
 //app.use('/api/auth', authRouter);
 app.use('/api/member', memberRouter);
+app.use('/api/feed', feedRouter);
 //------------------------------------------------------------
+
 app.use((req, res, next) => {
     const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
     error.status = 404;
