@@ -11,6 +11,7 @@ dotenv.config();
 app.use('/', express.static(path.join(__dirname, 'public'))); // 일반 static 폴더 설정
 app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
+//json 설정
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
