@@ -1,3 +1,5 @@
+//수업때 만들었던 마이스타그램 최종본
+
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2');
